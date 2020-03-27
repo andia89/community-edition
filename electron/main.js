@@ -110,7 +110,7 @@ function createWindow () {
 	
 	// Wait for the mainWindow.loadURL(..) and the optional mainWindow.webContents.openDevTools()
 	// to be finished before minimizing
-	config.get('start_minimized') && mainWindow.webContents.once('did-finish-load', () => config.get('window_display_behavior') === 'show_trayIcon' ? mainWindow.hide() :  mainWindow.minimize());
+	config.get('start_minimized') && mainWindow.webContents.once('did-finish-load', () => config.get('window_display_behavior') === 'show_taskbar' ? mainWindow.minimize() :  mainWindow.hide());
 
 	// Check if the window its outside of the view (ex: multi monitor setup)
 	const { positionOnScreen } = require('./utils/positionOnScreen');
